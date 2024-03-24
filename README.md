@@ -1,2 +1,2 @@
 # webproject
-test pull 
+test spapp

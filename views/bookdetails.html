@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Booksy</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+	<!-- bootstrap -->
+	<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+
+	<link href="../themes/css/bootstrappage.css" rel="stylesheet" />
+
+	<!-- global styles -->
+	<link href="../themes/css/flexslider.css" rel="stylesheet" />
+	<link href="../themes/css/main.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+	<link rel="icon" type="image/x-icon" href="C:\Users\maxme\OneDrive\Desktop\hciproject\HCIBooksy\Booksy\themes\images\favicon.ico">
+
+	<!-- scripts -->
+	<script src="themes/js/jquery-1.7.2.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="themes/js/superfish.js"></script>
+	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+</head>
+
+<body>
+	
+
+		<section  class="main-content">
+			<div class="row">
+				<div class="span9">
+					<div class="row">
+						<div class="span4">
+							<a href="./themes/images/books1/book10.jpg" style="margin-left: 50px" class="thumbnail"
+								data-fancybox-group="group1" title="Description 1"><img alt="book1"
+									src="./themes/images/books1/book1.png"></a>
+
+						</div>
+						<div class="span5">
+							<address style="font-size: 18px" id="bookDetails">
+								<!-- Knjiga ce biti ovdje -->
+							</address>
+							<div class="button-container">
+								<button class="custom-button">
+									Add to cart
+								</button>
+								<button class="custom-button">
+									Add to wishlist
+								</button>
+							</div>
+						</div>
+						<div class="row">
+							<div class="span9">
+								<ul class="nav nav-tabs" id="myTab">
+									<li class="active"><a style="font-size:12pt; margin-left: 80px;" href="#home">Description</a></li>
+								</ul>
+								<div class="tab-content">
+									<div style="font-size: 12pt; margin-left:90px;color: #033F63;" class="tab-pane active" id="bookDescription">
+										<!-- I ovdje -->
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="span9">
+							<ul class="nav nav-tabs" id="myTab">
+								<li class="active"><a style="font-size:12pt; margin-left: 80px;" href="#home">Description</a></li>
+							</ul>
+							<div class="tab-content">
+								<div style="font-size: 12pt; margin-left:90px;color: #033F63;" class="tab-pane active" id="home">From a highly lauded modern voice in feminism and racial justice comes a deeply 
+									personal and insightful testament to the power of reimagining to dismantle the frameworks and systems that no longer serve us while building new ones that do.
+									There are breaking points in all our lives when we realize that the way things have been done before just don't work for us anymore, be it the way we approach 
+									our relationships, our belief systems, our work, our education, even our rest. </div>
+								</br>
+							</div>
+						</div>
+</div>
+<script src="themes/js/common.js"></script>
+<script src="themes/js/jquery.flexslider-min.js"></script>
+<script type="text/javascript">
+	$(function () {
+		$(document).ready(function () {
+			$('.flexslider').flexslider({
+				animation: "fade",
+				slideshowSpeed: 4000,
+				animationSpeed: 600,
+				controlNav: false,
+				directionNav: true,
+				controlsContainer: ".flex-container" // the container that holds the flexslider
+			});
+		});
+	});
+
+	$(document).ready(function() {
+        $.ajax({
+            url: 'assets/books.json',
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                // just the first book
+                var book = data.books[0];
+
+                $('#bookDetails').html(
+                    '<strong><span style="color: #033F63 ;">' + book.title + '</span><br>' +
+                    '<span style="color: #000; font-size: smaller;">' + book.author + ' (Author)</span><br><br>' +
+                    '<strong style="color: #033F63;">Product details:</strong><br>' +
+                    '<span style="color: #033F63; ">Price:</span> <span style="color: #000; text-decoration: line-through;">$' + book.originalPrice + '</span> <span style="color:red; ">$' + book.price + '</span><br>' +
+                    '<span style="color: #033F63; ">Publisher:</span> <span style="color: #000">' + book.publisher + '</span><br>' +
+                    '<span style="color: #033F63; ">Publish Date:</span><span style="color: #000">' + book.publishDate + '</span><br>' +
+                    '<span style="color: #033F63; ">Pages:</span> <span style="color: #000">' + book.pages + '</span><br>' +
+                    '<span style="color: #033F63; ">Dimensions:</span> <span style="color: #000">' + book.dimensions + '</span><br>' +
+                    '<span style="color: #033F63; ">Language:</span><span style="color: #000"> ' + book.language + '</span><br>' +
+                    '<span style="color: #033F63; ">Type:</span><span style="color: #000"> ' + book.type + '</span><br>' +
+                    '<span style="color: #033F63; ">ISBN:</span><span style="color: #000"> ' + book.isbn + '</span><br>'
+                );
+                $('#bookDescription').html(book.description);
+            },
+            error: function(xhr, status, errorThrown) {
+                console.log('Error: ', errorThrown);
+            }
+        });
+	});
+</script>
+</body>
+
+</html>

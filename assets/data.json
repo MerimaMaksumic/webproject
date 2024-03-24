@@ -1,0 +1,129 @@
+{
+    "books": [
+      {
+        "id": 1,
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "price": 12.99,
+        "publisher": "Scribner",
+        "publish_date": "1925-04-10",
+        "num_of_pages": 180,
+        "dimensions": "5.2 x 0.6 x 8 inches",
+        "language": "English",
+        "type": "Novel",
+        "isbn": "978-0743273565"
+      },
+      {
+        "id": 2,
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "price": 10.50,
+        "publisher": "J. B. Lippincott & Co.",
+        "publish_date": "1960-07-11",
+        "num_of_pages": 281,
+        "dimensions": "6.1 x 1.1 x 9.2 inches",
+        "language": "English",
+        "type": "Novel",
+        "isbn": "978-0061120084"
+      }
+    ],
+    "users": [
+      {
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "john.doe@example.com",
+        "password": "password123"
+      },
+      {
+        "first_name": "Jane",
+        "last_name": "Smith",
+        "email": "jane.smith@example.com",
+        "password": "securepass"
+      }
+    ],
+    "wishlist": [
+      {
+        "user": {
+          "first_name": "John",
+          "last_name": "Doe",
+          "email": "john.doe@example.com",
+          "password": "password123"
+        },
+        "books": [
+          {
+            "title": "The Great Gatsby",
+            "author": "F. Scott Fitzgerald",
+            "price": 12.99,
+            "publisher": "Scribner",
+            "publish_date": "1925-04-10",
+            "num_of_pages": 180,
+            "dimensions": "5.2 x 0.6 x 8 inches",
+            "language": "English",
+            "type": "Novel",
+            "isbn": "978-0743273565"
+          },
+          {
+            "title": "To Kill a Mockingbird",
+            "author": "Harper Lee",
+            "price": 10.50,
+            "publisher": "J. B. Lippincott & Co.",
+            "publish_date": "1960-07-11",
+            "num_of_pages": 281,
+            "dimensions": "6.1 x 1.1 x 9.2 inches",
+            "language": "English",
+            "type": "Novel",
+            "isbn": "978-0061120084"
+          }
+        ]
+      },
+      {
+        "user": {
+          "first_name": "Jane",
+          "last_name": "Smith",
+          "email": "jane.smith@example.com",
+          "password": "securepass"
+        },
+        "books": [
+          {
+            "title": "To Kill a Mockingbird",
+            "author": "Harper Lee",
+            "price": 10.50,
+            "publisher": "J. B. Lippincott & Co.",
+            "publish_date": "1960-07-11",
+            "num_of_pages": 281,
+            "dimensions": "6.1 x 1.1 x 9.2 inches",
+            "language": "English",
+            "type": "Novel",
+            "isbn": "978-0061120084"
+          }
+        ]
+      }
+    ],
+    "cart": [
+      {
+        "user": {
+          "first_name": "John",
+          "last_name": "Doe",
+          "email": "john.doe@example.com",
+          "password": "password123"
+        },
+        "items": [
+          {"title": "The Great Gatsby", "author": "F. Scott Fitzgerald", "price": 12.99, "quantity": 2},
+          {"title": "To Kill a Mockingbird", "author": "Harper Lee", "price": 10.50, "quantity": 1}
+        ],
+        "total": 36.48
+      },
+      {
+        "user": {
+          "first_name": "Jane",
+          "last_name": "Smith",
+          "email": "jane.smith@example.com",
+          "password": "securepass"
+        },
+        "items": [
+          {"title": "To Kill a Mockingbird", "author": "Harper Lee", "price": 10.50, "quantity": 3}
+        ],
+        "total": 31.50
+      }
+    ]
+  }
