@@ -1,44 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
- <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<head>
-	<meta charset="utf-8">
-	<title>Booksy</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
-	<!-- bootstrap -->
-	<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-
-	<link href="../themes/css/bootstrappage.css" rel="stylesheet" />
-	<link href="../assets/css/custom.css" rel="stylesheet" />
-	<link href="../assets/css/jQuerySPApp.css" rel="stylesheet" />
-	<link href="../assets/css/spapp.css" rel="stylesheet" />
-
-
-
-
-	<!-- global styles -->
-	<link href="../themes/css/flexslider.css" rel="stylesheet" />   
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-	<link href="../themes/css/main.css" rel="stylesheet" />
-	<link rel="shortcut icon" type="image/png " href="Booksy\themes\images\android-chrome-192x192.png"/>
-
-
-
-	<!-- scripts -->
-	<script src="../themes/js/jquery-1.7.2.min.js"></script>
-	<script src="../bootstrap/js/bootstrap.min.js"></script>
-	<script src="../themes/js/superfish.js"></script>
-	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-
-
-</head>
-
-<body>
 	
 		<section class="main-content">
 
@@ -634,38 +594,4 @@
 			<!-- featured section ends -->
 		</section>
 		
-	<script src="../themes/js/common.js"></script>
-	<script src="../themes/js/jquery.flexslider-min.js"></script>
-	<script type="text/javascript">
-		$(function () {
-			$(document).ready(function () {
-				$('.flexslider').flexslider({
-					animation: "fade",
-					slideshowSpeed: 4000,
-					animationSpeed: 600,
-					controlNav: false,
-					directionNav: true,
-					controlsContainer: ".flex-container" // the container that holds the flexslider
-				});
-			});
-		});
-	</script>
-
-<script>  //ajax call 
-	$.get('./rest/books/1', function(data) {
-	   for (var i = 0; i < data.length; i++) {
-		 var name = data[i].book_name;}});		
-		 
-		 var nameElement = $('<div></div>').text(name);
-
-		 $('#bookname').append(nameElement);
-
-
-			 </script>
-
-
-
-
-</body>
-
-</html>
+	

@@ -24,6 +24,16 @@
 	<script src="themes/js/jquery-1.7.2.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="themes/js/superfish.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
+
+	<style>
+		label.error {
+			color: red;
+			font-size: 0.8em;
+		}
+	</style>
+	
 
 
 </head>
@@ -38,24 +48,23 @@
 	<div class="forms">
 	  <div class="form login">
 		<span class="title" style="color:033F63;">Sign up</span>
-  
-	  
+
+		<form id="register-form" method="post">
 		  <div class="input-field">
-			<input type="text" placeholder="Enter your email address" required>
-		  
+			<input type="text" placeholder="Enter your email address" id="email" name="email" >
 		  </div>
   
 		  <div class="input-field">
-			<input type="password" placeholder="Enter your password" required>
+			<input type="password" placeholder="Enter your password" id="password" name="password" >
 		
 		  </div>
   
 		  <div class="input-field">
-			<input type="password" placeholder="Confirm your password" required>
+			<input type="password" placeholder="Confirm your password" id="confirm_password" name="confirm_password" >
 		  </div>
   
 		  <div class="input-field button">
-			<input type="button" value="Register" id="register-button">
+			<input type="submit" value="Register" id="register-button">
 		  </div>
 		</form>
   
@@ -71,18 +80,87 @@
 
 	<script src="themes/js/common.js"></script>
 	<script src="themes/js/jquery.flexslider-min.js"></script>
-	<script type="text/javascript">
-		$(function () {
-			$(document).ready(function () {
-				$('.flexslider').flexslider({
-					animation: "fade",
-					slideshowSpeed: 4000,
-					animationSpeed: 600,
-					controlNav: false,
-					directionNav: true,
-					controlsContainer: ".flex-container" // the container that holds the flexslider
-				});
-			});
+	
+	<script>
+		$(document).ready(function() {
+			let users = [];
+
+$("#register-form").validate({
+    rules: {
+        email: {
+            required: true,
+            email: true,
+            maxlength: 255,
+            minlength: 3
+        },
+        password: {
+            required: true,
+            minlength: 8,
+            maxlength: 255
+        },
+        confirm_password: {
+            equalTo: "#password",
+    }
+},
+messages: {
+    email: {
+        required: "Email is required",
+        email: "Please enter a valid email",
+        maxlength: "Your email must not be longer than 255 characters"
+    },
+    password: {
+        required: "Please enter your password",
+        minlength: "Your password must consist of at least 8 characters",
+        maxlength: "Your password must not must not be longer than 255 characters"
+    },
+    confirm_password: {
+        equalTo: "Password fields must match"
+    }
+},
+
+submitHandler: function(form, event) {
+    event.preventDefault();
+    blockUi("#register-form");
+    let formData = serializeForm(form);
+    users.push(formData);
+    $("#register-form")[0].reset(); // to clean form
+    console.log("Users array is: " + JSON.stringify(users));
+    unblockUi("#register-form");
+    console.log("Form valid, handling submission.");
+},
+
+errorPlacement: function(error, element) {
+        error.insertAfter(element.parent('.input-field'));
+    }
+});
+
+blockUi = (element) => {
+    $(element).block({
+      message: '<div class="spinner-border text-primary" role="status"></div>',
+      css: {
+        backgroundColor: "transparent",
+        border: "0",
+      },
+      overlayCSS: {
+        backgroundColor: "#000",
+        opacity: 0.25,
+      },
+    });
+  };
+  
+unblockUi = (element) => {
+    $(element).unblock({});
+};
+
+
+serializeForm = (form) => {
+    let jsonResult = {};
+    $.each($(form).serializeArray(), function () {
+        jsonResult[this.name] = this.value;
+    });
+    return jsonResult;
+
+}
 		});
 	</script>
 </body>
