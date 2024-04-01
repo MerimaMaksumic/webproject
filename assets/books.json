@@ -11,7 +11,8 @@
         "dimensions": "5.2 x 0.6 x 8 inches",
         "language": "English",
         "type": "Novel",
-        "isbn": "978-0743273565"
+        "isbn": "978-0743273565",
+        "imageUrl":"https://m.media-amazon.com/images/I/81QuEGw8VPL._AC_UF1000,1000_QL80_.jpg"
       },
       {
         "id": 2,
@@ -24,7 +25,8 @@
         "dimensions": "6.1 x 1.1 x 9.2 inches",
         "language": "English",
         "type": "Novel",
-        "isbn": "978-0061120084"
+        "isbn": "978-0061120084",
+        "imageUrl":"https://m.media-amazon.com/images/I/71FxgtFKcQL._AC_UF1000,1000_QL80_.jpg"
       },
       {
         "id": 2,
@@ -37,7 +39,8 @@
         "dimensions": "6.1 x 1.1 x 9.2 inches",
         "language": "English",
         "type": "Novel",
-        "isbn": "978-0061120084"
+        "isbn": "978-0061120084",
+        "imageUrl" : "https://www.libreriaserendipia.com/imagenes/9788491/978849139057.JPG"
       },
       {
         "id": 2,
@@ -50,7 +53,8 @@
         "dimensions": "6.1 x 1.1 x 9.2 inches",
         "language": "English",
         "type": "Novel",
-        "isbn": "978-0061120084"
+        "isbn": "978-0061120084",
+        "imageUrl" : "https://www.libreriaserendipia.com/imagenes/9788491/978849139057.JPG"
       },
       {
         "id": 2,
@@ -63,7 +67,8 @@
         "dimensions": "6.1 x 1.1 x 9.2 inches",
         "language": "English",
         "type": "Novel",
-        "isbn": "978-0061120084"
+        "isbn": "978-0061120084",
+        "imageUrl" : "https://www.libreriaserendipia.com/imagenes/9788491/978849139057.JPG"
       },
       {
         "id": 2,
@@ -76,7 +81,8 @@
         "dimensions": "6.1 x 1.1 x 9.2 inches",
         "language": "English",
         "type": "Novel",
-        "isbn": "978-0061120084"
+        "isbn": "978-0061120084",
+        "imageUrl" : "https://www.libreriaserendipia.com/imagenes/9788491/978849139057.JPG"
       },
       {
         "id": 2,
@@ -89,6 +95,7 @@
         "dimensions": "6.1 x 1.1 x 9.2 inches",
         "language": "English",
         "type": "Novel",
-        "isbn": "978-0061120084"
+        "isbn": "978-0061120084",
+        "imageUrl" : "https://www.libreriaserendipia.com/imagenes/9788491/978849139057.JPG"
       }
     ]}

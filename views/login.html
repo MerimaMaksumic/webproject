@@ -38,21 +38,22 @@
     <div class="form login">
       <span class="title" style="color:033F63;">Log in</span>
 
+	  <form id="login-form" method="post">
     
         <div class="input-field">
-          <input type="text" placeholder="Enter your email address" required>
+          <input type="text" placeholder="Enter your email address" id="login-email" name="login-email">
         
         </div>
 
         <div class="input-field">
-          <input type="password" placeholder="Enter your password" required>
+          <input type="password" placeholder="Enter your password" id="login-password" name="login-password">
           
         
         </div>
 
         <a href="#" class="text" id="forgot-password-link">Forgot Password?</a>
         <div class="input-field button">
-          <input type="button" value="Login" id="login-button">
+          <input type="submit" value="Login" id="login-button">
         </div>
       </form>
 
@@ -64,13 +65,10 @@
 </div>
         </section>
 
-
-
 	</div>
 	<script src="themes/js/common.js"></script>
 	<script src="themes/js/jquery.flexslider-min.js"></script>
 	<script type="text/javascript">
-		$(function () {
 			$(document).ready(function () {
 				$('.flexslider').flexslider({
 					animation: "fade",
@@ -81,7 +79,40 @@
 					controlsContainer: ".flex-container" // the container that holds the flexslider
 				});
 			});
-		});
+
+			$("#login-form").on("submit", function(event) {
+            // Prevent the default form submission
+            event.preventDefault();
+
+            // Retrieve input values
+            var email = $("#login-email").val();
+            var password = $("#login-password").val();
+
+            if (email && password) {
+                // AJAX request to check user credentials
+                $.ajax({
+                    url: 'assets/users.json', // Adjust URL as needed
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(users) {
+                        var userExists = users.some(function(user) {
+                            return user.email === email && user.password === password;
+                        });
+
+                        if (userExists) {
+                            console.log("User found: Login successful.");
+                        } else {
+                            console.log("User not found: Login failed.");
+                        }
+                    },
+                    error: function(xhr, status, errorThrown) {
+                        console.log("Error fetching user data: " + errorThrown);
+                    }
+                });
+            } else {
+                console.log("Please enter both email and password.");
+            }
+        });
 	</script>
 </body>
 
