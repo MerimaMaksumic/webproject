@@ -1,0 +1,66 @@
+
+	
+		<section class="main-content">
+
+			<section class="featured" id="featured">
+				<h1 class="heading"> <span class="text">Top Selling</span> </h1>
+				<div class="swiper featured-slider">
+					<div class="swiper-wrapper">
+
+					</div>
+
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
+			</section>
+
+			<section class="featured" id="featured">
+				<h1 class="heading"> <span class="text">Sale</span> </h1>
+				<div class="swiper featured-slider">
+					<div class="swiper-wrapper">
+
+
+		
+					</div>
+
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
+			</section>
+			<!-- featured section ends -->
+		</section>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$.ajax({
+					url: 'assets/books.json',
+					type: 'GET',
+					dataType: 'json',
+					success: function(data) {
+						var booksHtml = '';
+
+						$.each(data.books, function(index, book) {
+							booksHtml += '<div class="swiper-slide box">' +
+											'<div class="product-box">' +
+												'<p><a href="#bookdetails"><img src="' + book.imageUrl + '" height="300px" width="175px" alt="" /></a></p>' +
+												'<h>' + book.title + '</h></br>' +
+												'<h>' + book.author + '</h></br>' +
+												'<div class="product-info">' +
+													'<p class="price">$' + book.price + '</p>' +
+													'<a href="" <i class="fa fa-heart-o fa-2x" aria-hidden="true" style="padding-right: 10px;"></i></a>' +
+													'<a href="" <i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></a>' +
+												'</div>' +
+											'</div>' +
+										  '</div>';
+						});
+
+						$('.swiper-wrapper').html(booksHtml);
+					},
+					error: function(xhr, status, errorThrown) {
+						console.log('Error fetching books data:', errorThrown);
+					}
+				});
+			});
+		</script>
+		
+		
+	

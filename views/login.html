@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Booksy</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+	<!-- bootstrap -->
+	<!-- <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+	<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+
+	<link href="themes/css/bootstrappage.css" rel="stylesheet" />
+
+	<!-- global styles -->
+	<link href="themes/css/flexslider.css" rel="stylesheet" />   
+	<link href="themes/css/main.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+	<link rel="icon" type="image/x-icon" href="C:\Users\maxme\OneDrive\Desktop\hciproject\HCIBooksy\Booksy\themes\images\favicon.ico">
+
+	<!-- scripts -->
+	<script src="themes/js/jquery-1.7.2.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="themes/js/superfish.js"></script>
+	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+</head>
+
+<body>
+	
+
+        <section class="main-content">
+	<!-- Login Form -->
+<div class="container-login">
+  <div class="forms">
+    <div class="form login">
+      <span class="title" style="color:033F63;">Log in</span>
+
+	  <form id="login-form" method="post">
+    
+        <div class="input-field">
+          <input type="text" placeholder="Enter your email address" id="login-email" name="login-email">
+        
+        </div>
+
+        <div class="input-field">
+          <input type="password" placeholder="Enter your password" id="login-password" name="login-password">
+          
+        
+        </div>
+
+        <a href="#" class="text" id="forgot-password-link">Forgot Password?</a>
+        <div class="input-field button">
+          <input type="submit" value="Login" id="login-button">
+        </div>
+      </form>
+
+      <div class="login-signup">
+        <span class="text">Don't have an account? <a href="#registration" class="signup-text" id="signup-link">Sign Up</a></span>
+      </div>
+    </div>
+  </div>
+</div>
+        </section>
+
+	</div>
+	<script src="themes/js/common.js"></script>
+	<script src="themes/js/jquery.flexslider-min.js"></script>
+	<script type="text/javascript">
+			$(document).ready(function () {
+				$('.flexslider').flexslider({
+					animation: "fade",
+					slideshowSpeed: 4000,
+					animationSpeed: 600,
+					controlNav: false,
+					directionNav: true,
+					controlsContainer: ".flex-container" // the container that holds the flexslider
+				});
+			});
+
+			$("#login-form").on("submit", function(event) {
+            // Prevent the default form submission
+            event.preventDefault();
+
+            // Retrieve input values
+            var email = $("#login-email").val();
+            var password = $("#login-password").val();
+
+            if (email && password) {
+                // AJAX request to check user credentials
+                $.ajax({
+                    url: 'assets/users.json', // Adjust URL as needed
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(users) {
+                        var userExists = users.some(function(user) {
+                            return user.email === email && user.password === password;
+                        });
+
+                        if (userExists) {
+                            console.log("User found: Login successful.");
+                        } else {
+                            console.log("User not found: Login failed.");
+                        }
+                    },
+                    error: function(xhr, status, errorThrown) {
+                        console.log("Error fetching user data: " + errorThrown);
+                    }
+                });
+            } else {
+                console.log("Please enter both email and password.");
+            }
+        });
+	</script>
+</body>
+
+</html>

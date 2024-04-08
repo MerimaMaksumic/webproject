@@ -1,0 +1,86 @@
+<head>
+	<meta charset="utf-8">
+	<title>Booksy</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+	<!-- bootstrap -->
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+
+	<link href="themes/css/bootstrappage.css" rel="stylesheet" />
+
+	<!-- global styles -->
+	<link href="themes/css/flexslider.css" rel="stylesheet" />
+	<link href="themes/css/main.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+	<link rel="icon" type="image/x-icon" href="C:\Users\maxme\OneDrive\Desktop\hciproject\HCIBooksy\Booksy\themes\images\favicon.ico">
+
+	<!-- scripts -->
+	<script src="themes/js/jquery-1.7.2.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="themes/js/superfish.js"></script>
+	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+</head>
+
+
+<section class="main-content">
+    <h1 class="heading"> <span class="text" style="font-size: 20pt; color: #494949"> New Arrivals </span> </h1>
+
+    <div class="row">
+        <div class="span">
+            <ul class="thumbnails listing-products" style="width: 100%; margin: auto;">
+                <!-- Ovdje -->
+            </ul>
+            <hr>
+            <div align="center" class="pagination pagination-small pagination-centered">
+                <ul>
+                    <li><a href="#">Prev</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">Next</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $.ajax({
+            url: 'assets/books.json',
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                var sortedBooks = data.books.sort(function(a, b) {
+                    return new Date(b.publishDate) - new Date(a.publishDate);
+                });
+
+                var booksHtml = '';
+
+                $.each(sortedBooks, function(index, book) {
+                    var imageUrl = "themes/images/books2/book4.jpg";
+
+                    booksHtml += '<li class="span3">' +
+                                    '<div class="product-box">' +
+                                        '<a href="#bookdetails"><img alt="" src="' + imageUrl + '" height="300px" width="175px"></a><br />' +
+                                        '<a href="#bookdetails" class="title">' + book.title + '</a><br />' +
+                                        '<a href="#" class="category">' + book.author + '</a></br>' +
+                                        '<p class="price">$' + book.price + '</p>' +
+                                        '<a href=""><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></a>' +
+                                    '</div>' +
+                                  '</li>';
+                });
+                $('.thumbnails.listing-products').html(booksHtml);
+            },
+            error: function(xhr, status, errorThrown) {
+                console.log('Error: ', errorThrown);
+            }
+        });
+    });
+</script>

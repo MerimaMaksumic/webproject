@@ -1,0 +1,51 @@
+<section class="main-content">
+    <h1 class="heading"> <span class="text" style="font-size: 20pt; color: #494949"> CATEGORY NAME </span> </h1>
+
+    <div class="row">
+        <div class="span">
+            <ul class="thumbnails listing-products" style="width: 100%; margin: auto;">
+            </ul>
+            <hr>
+            <div align="center" class="pagination pagination-small pagination-centered">
+                <ul>
+                    <li><a href="#">Prev</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">Next</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $.ajax({
+            url: 'assets/bestsellers.json',
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                var bestsellersHtml = '';
+
+                $.each(data.bestsellers, function(index, item) {
+                    bestsellersHtml += '<li class="span3">' +
+                                        '<div class="product-box">' +
+                                            (item.sale ? '<span class="sale_tag"></span>' : '') +
+                                            '<a href="#bookdetails"><img alt="" src="' + item.imageUrl + '" height="300px" width="175px"></a><br />' +
+                                            '<a href="#bookdetails" class="title">' + item.title + '</a><br />' +
+                                            '<a href="#" class="category">' + item.author + '</a></br>' +
+                                            '<p class="price">' + (item.sale ? 'Sale! ' : '') + '$' + item.price + '</p>' +
+                                            '<a href=""><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></a>' +
+                                        '</div>' +
+                                       '</li>';
+                });
+                $('.thumbnails.listing-products').html(bestsellersHtml);
+                console.log('Bestsellers data:', data);
+            },
+            error: function(xhr, status, errorThrown) {
+                console.log('Error fetching bestsellers data:', errorThrown);
+            }
+        });
+    });
+    </script>

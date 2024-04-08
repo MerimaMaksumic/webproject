@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Booksy</title>m
+
+	<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+	<!-- bootstrap -->
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+
+
+	<link href="themes/css/bootstrappage.css" rel="stylesheet" />
+	<link href="assets/css/jQuerySPApp.css" rel="stylesheet" />
+	<script src="assets/js/user-service.js"></script>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+	
+	
+  
+  <!-- Template Main CSS File -->
+  <link href="../themes/css/style1.css" rel="stylesheet"> 
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+  
+  <script src="themes/js/main.js"></script>
+  <script src="assets/js/user-service.js"></script>
+	
+
+	<!-- global styles -->
+	<link href="themes/css/flexslider.css" rel="stylesheet" />   
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+	<link href="themes/css/main.css" rel="stylesheet" />
+	<link rel="shortcut icon" type="image/png " href="Booksy\themes\images\android-chrome-192x192.png"/>
+
+   <link href="./assets/css/morris.css" rel="stylesheet">
+
+   <!-- SPApp CSS -->
+   <link href="./assets/css/jQuerySPApp.css" rel="stylesheet">
+
+   <!-- Custom Fonts -->
+   <link href="./assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+   <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
+
+	<!-- scripts -->
+	<script src="themes/js/jquery-1.7.2.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="themes/js/superfish.js"></script>
+	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+
+
+
+
+
+</head>
+
+<body>
+	<!-- header -->
+	<div id="banner">
+		<div id="banner-content">FREE INTERNATIONAL DELIVERY</div>
+	  </div>
+	  
+	  <script>
+		var bannerContent = document.getElementById('banner-content');
+		var messages = ["FREE INTERNATIONAL DELIVERY", "20% OFF ON FIRST ORDER"];
+		var index = 0;
+	  
+		function rotateBanner() {
+		  bannerContent.textContent = messages[index];
+		  index = (index + 1) % messages.length;
+		  setTimeout(rotateBanner, 2000); // Delay in milliseconds (2 seconds)
+		}
+	  
+		rotateBanner();
+	  </script>
+	<div id="top-bar" class="container">
+		<div class="logo">
+			<a href="index.html" style="padding-left: 30px;" class="logo pull-left"><img src="themes/images/logo.png"
+					alt=""></a>
+		</div>
+
+		<div class="search center">
+				<input type="text" class="searchTerm icon-search" placeholder="Search books by title, author, or keyword...">
+			
+		</div>
+
+
+		<div class="account ">
+			<ul class="user-menu">
+				<li><a href="#registration"><i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>Account</a></li>
+				<li><a href="#wishlist"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>Wishlist</a></li>
+				<li><a href="#cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>Cart</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="wrapper" class="container">
+		<section class="navbar main-menu">
+			<div class="navbar-inner main-menu">
+				<div class="span4">
+					<nav id="menu">
+						<ul>
+							<li><a href="#books" style="font-size: 12pt">Books</a>
+								<ul>
+									<li><a href="#books">Romance</a></li>
+									<li><a href="#books">Crime</a></li>
+									<li><a href="#books">Historical</a></li>
+									<li><a href="#books">Sci-fi</a></li>
+									<li><a href="#books">Mystery</a></li>
+									<li><a href="#books">Historical</a></li>
+									<li><a href="#books">Kids</a></li>
+									<li><a href="#books">Fantasy</a></li>
+									<li><a href="#books">Non-Fiction</a></li>
+									<li><a href="#books">Graphic Novel</a></li>
+									<li><a href="#books">Biography</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="span4 span-inner">
+					<nav id="menu" class="center">
+						<ul>
+							<li><a href="#arrivals" style="font-size: 12pt">New arrivals</a>
+								<ul>
+									<li><a href="#arrivals">This week</a></li>
+									<li><a href="#arrivals">This month</a></li>
+									<li><a href="#arrivals">This year</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="span4 span-inner">
+					<nav id="menu" class="center">
+						<ul>
+							<li><a href="#bestseller" style="font-size: 12pt">Bestsellers</a>
+								<ul>
+									<li><a href="#bestseller">This month</a></li>
+									<li><a href="#bestseller">This year</a></li>
+									<li><a href="#bestseller">All time</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="span4 span-inner">
+					<nav id="menu" class="center">
+						<ul>							
+							<li><a href="#sale" style="font-size: 12pt">Sale</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>			
+		</section>
+
+
+
+
+		<main id="jqueryspapp" role="main">
+			<section id="dashboard" data-load="views/dashboard.html"></section>
+			<section id="cart" data-load="views/cart.html"></section>
+			<section id="wishlist" data-load="views/wishlist.html"></section>
+			<section id="login" data-load="login.html"></section>
+			<section id="checkout" data-load="views/checkout.html"></section>
+			<section id="sale" data-load="views/sale.html"></section>
+			<section id="bestseller" data-load="views/bestseller.html"></section>
+			<section id="arrivals" data-load="views/arrivals.html"></section>
+			<section id="bookdetails" data-load="views/bookdetails.html"></section>
+			<section id="books" data-load="books.html"></section>
+			<section id="registration" data-load="registration.html"></section>
+			<section id="about" data-load="aboutus.html"></section>
+			<section id="deliverydetails" data-load="deliverydetails.html"></section>
+			<section id="termsandconditions" data-load="termsandconditions.html"></section>
+
+		  </main>
+
+		
+        <!-- jQuery -->
+        <script src="assets/js/jquery.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="./assets/js/bootstrap.min.js"></script>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="./assets/js/metisMenu.min.js"></script>
+
+        <!-- SPApp JS -->
+        <script src="./assets/js/jQuerySPApp.js"></script>
+
+        <!-- Morris Charts JavaScript -->
+        <script src="./assets/js/raphael.min.js"></script>
+        <script src="./assets/js/morris.min.js"></script>
+      
+
+        <!-- Custom Theme JavaScript -->
+        <script src="./assets/js/startmin.js"></script>
+
+        <!-- Toastr JS -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+        <script src="./assets/js/utils.js"></script>
+        <script src="./assets/js/restClient.js"></script>
+        <script src="./assets/js/controllers/emailsTemplates.js"></script>
+
+        <script src="//cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+        <script src="./assets/js/dataTables/jquery.dataTables.min.js"></script>
+        <script src="./assets/js/dataTables/dataTables.bootstrap.min.js"></script>
+        <script src="//cdn.datatables.net/responsive/2.2.7/js/dataTables.responsive.min.js"></script>
+
+	
+	<script src="themes/js/common.js"></script>
+	<script src="themes/js/jquery.flexslider-min.js"></script>
+
+
+	<script type="text/javascript">
+		$(function () {
+			$(document).ready(function () {
+				$('.flexslider').flexslider({
+					animation: "fade",
+					slideshowSpeed: 4000,
+					animationSpeed: 600,
+					controlNav: false,
+					directionNav: true,
+					controlsContainer: ".flex-container" // the container that holds the flexslider
+				});
+			});
+		});
+	</script>
+	
+
+	<script src ="../assets/js/jquery.spapp.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var app = $.jQuerySPApp({defaultView : "dashboard"});
+
+			app.route({view: 'dashboard', load: 'dashboard.html'});
+			app.route({view: 'cart', load: 'cart.html'});
+			app.route({view: 'wishlist', load: 'wishlist.html'});
+			app.route({view: 'checkout', load: 'checkout.html'});
+			app.route({view: 'login', load: 'login.html'});
+			app.route({view: 'sale', load: 'sale.html'});
+			app.route({view: 'bestseller', load: 'bestseller.html'});
+			app.route({view: 'arrivals', load: 'arrivals.html'});
+			app.route({view: 'bookdetails', load: 'bookdetails.html'});
+			app.route({view: 'books', load: 'books.html'});
+			app.route({view: 'registration', load: 'registration.html'});
+			app.route({view: 'deliverydetails', load: 'deliverydetails.html'});
+			app.route({view: 'about', load: 'aboutus.html'});
+			app.route({view: 'termsandconditions', load: 'termsandconditions.html'});
+
+
+
+
+			
+			
+			app.run();
+		});
+ 			
+	</script>
+</body>
+
+</html>
