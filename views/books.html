@@ -58,17 +58,19 @@
 
 		$(document).ready(function() {
 		    $.ajax({
-		        url: 'assets/books.json',
+		        // url: 'assets/books.json',
+		        url: 'http://localhost/web2024/backend/scripts/book_scripts/get_all_books.php',
 		        type: 'GET',
 		        dataType: 'json',
 		        success: function(data) {
 		            var booksHtml = '';
 
 		            $.each(data.books, function(index, book) {
-		                var imageUrl = "themes/images/books2/book1.jpg";
+		                // var imageUrl = "themes/images/books2/book1.jpg";
+	
 		                booksHtml += '<li class="span3">' +
 		                                '<div class="product-box">' +
-		                                    '<a href="#bookdetails"><img alt="" src="' + imageUrl + '" height="300px" width="175px"></a><br />' +
+		                                    '<a href="#bookdetails"><img alt="" src="' + book.imageUrl + '" height="300px" width="175px"></a><br />' +
 		                                    '<a href="#bookdetails" class="title">' + book.title + '</a><br />' +
 		                                    '<a href="#" class="category">' + book.author + '</a><br />' +
 		                                    '<p class="price">$' + book.price + '</p>' +
