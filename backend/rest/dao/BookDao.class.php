@@ -13,6 +13,12 @@ class BookDao extends BaseDao
     {
         return $this->query("SELECT * FROM books", []);
     }
+    
+    
+    public function get_all_new_books()
+    {
+        return $this->query("SELECT * FROM books ORDER BY id DESC", []);
+    }
 
     public function get_book_by_id($book_id)
     {

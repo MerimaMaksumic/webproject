@@ -35,4 +35,9 @@ class BookService
     {
         return $this->book_dao->delete_book_by_id($book_id);
     }
+
+
+    public function get_all_new_books(){
+        return $this->get_all_new_books();
+    }
 }
