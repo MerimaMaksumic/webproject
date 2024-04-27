@@ -32,7 +32,8 @@
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$.ajax({
-					url: 'assets/books.json',
+					// url: 'assets/books.json',
+					url: 'http://localhost/web2024/backend/scripts/book_scripts/get_all_books.php',
 					type: 'GET',
 					dataType: 'json',
 					success: function(data) {

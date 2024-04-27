@@ -44,30 +44,30 @@
 <script>
     $(document).ready(function () {
         $.ajax({
-            url: 'assets/cart.json',
+            url: 'http://localhost/web2024/backend/scripts/cart_scripts/get_all_by_user_id.php',
             type: 'GET',
             dataType: 'json',
+            data: { user_id: 1 }, // Send the user ID with the request
             success: function(data) {
                 var subtotal = 0;
                 var cartHtml = '';
-    
+
                 $.each(data.cart, function(index, item) {
-                    var imageUrl = "themes/images/books2/book4.jpg";
                     var itemTotal = item.price * item.quantity;
                     subtotal += itemTotal;
                     cartHtml += '<tr class="cart-row">' +
                                     '<td class="center"><a href="#"><i class="fa fa-trash-o fa-2x"></i></a></td>' +
-                                    '<td><a href="#bookdetails"><img alt="" src="' + imageUrl + '"height="200px" width="150px"></a></td>' + // Adjust src as needed
+                                    '<td><a href="#bookdetails"><img alt="' + item.title + '" src="' + item.imageUrl + '" height="200px" width="150px"></a></td>' +
                                     '<td>' + item.title + '</td>' +
                                     '<td>' + item.author + '</td>' +
                                     '<td><input type="text" value="' + item.quantity + '" class="input-mini"></td>' +
                                     '<td>$' + itemTotal.toFixed(2) + '</td>' +
                                 '</tr>';
                 });
-    
+
                 var tax = subtotal * 0.13;
                 var total = subtotal + tax;
-    
+
                 $('.table tbody').html(cartHtml + 
                                        '<tr><td colspan="5"><strong>Sub-Total</strong></td><td>$' + subtotal.toFixed(2) + '</td></tr>' +
                                        '<tr><td colspan="5"><strong>Tax (13%)</strong></td><td>$' + tax.toFixed(2) + '</td></tr>' +
@@ -75,15 +75,17 @@
             },
             error: function(xhr, status, errorThrown) {
                 console.log('Error fetching cart data:', errorThrown);
+                alert('Error fetching cart data: ' + errorThrown);
             }
         });
-    
+
         $('#checkout').click(function (e) {
             e.preventDefault();
             document.location.href = "#checkout";
         });
     });
-    </script>
+</script>
+
     
     
 </body>
