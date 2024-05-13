@@ -179,11 +179,9 @@
 			<section id="bestseller" data-load="views/bestseller.html"></section>
 			<section id="arrivals" data-load="views/arrivals.html"></section>
 			<section id="bookdetails" data-load="views/bookdetails.html"></section>
-			<section id="books" data-load="books.html"></section>
-			<section id="registration" data-load="registration.html"></section>
-			<section id="about" data-load="aboutus.html"></section>
-			<section id="deliverydetails" data-load="deliverydetails.html"></section>
-			<section id="termsandconditions" data-load="termsandconditions.html"></section>
+			<section id="books" data-load="views/books.html"></section>
+			<section id="registration" data-load="views/registration.html"></section>
+		
 
 		  </main>
 
@@ -258,14 +256,8 @@
 			app.route({view: 'bookdetails', load: 'bookdetails.html'});
 			app.route({view: 'books', load: 'books.html'});
 			app.route({view: 'registration', load: 'registration.html'});
-			app.route({view: 'deliverydetails', load: 'deliverydetails.html'});
-			app.route({view: 'about', load: 'aboutus.html'});
-			app.route({view: 'termsandconditions', load: 'termsandconditions.html'});
+		
 
-
-
-
-			
 			
 			app.run();
 		});
