@@ -22,7 +22,7 @@ Flight::group('/cart', function () {
      *     @OA\Response(
      *         response=200,
      *         description="Cart retrieved successfully",
-     *         @OA\JsonContent(type="object", example={"id": 1, "user_id": 5, "items": [{"id": 1, "product_id": 10, "quantity": 2}]})
+     *         @OA\JsonContent(type="object", example={"id": 1, "user_id": 5, "items": [{"id": 1, "book_id": 10, "quantity": 2}]})
      *     ),
      *     @OA\Response(
      *         response=404,
@@ -48,12 +48,12 @@ Flight::group('/cart', function () {
      *     @OA\RequestBody(
      *         description="Item data to add to the cart",
      *         required=true,
-     *         @OA\JsonContent(type="object", example={"user_id": 5, "product_id": 10, "quantity": 2})
+     *         @OA\JsonContent(type="object", example={"user_id": 5, "book_id": 10, "quantity": 2})
      *     ),
      *     @OA\Response(
      *         response=201,
      *         description="Item added to cart successfully",
-     *         @OA\JsonContent(type="object", example={"id": 1, "user_id": 5, "product_id": 10, "quantity": 2})
+     *         @OA\JsonContent(type="object", example={"id": 1, "user_id": 5, "book_id": 10, "quantity": 2})
      *     ),
      *     @OA\Response(
      *         response=400,
@@ -87,12 +87,12 @@ Flight::group('/cart', function () {
      *     @OA\RequestBody(
      *         description="Item data to update",
      *         required=true,
-     *         @OA\JsonContent(type="object", example={"product_id": 10, "quantity": 3})
+     *         @OA\JsonContent(type="object", example={"book_id": 10, "quantity": 3})
      *     ),
      *     @OA\Response(
      *         response=200,
      *         description="Cart item updated successfully",
-     *         @OA\JsonContent(type="object", example={"id": 1, "product_id": 10, "quantity": 3})
+     *         @OA\JsonContent(type="object", example={"id": 1, "book_id": 10, "quantity": 3})
      *     ),
      *     @OA\Response(
      *         response=400,
